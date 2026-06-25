@@ -6,12 +6,24 @@ class Solution:
         #         if nums[i]==nums[j]:
         #             return True
         # return False
-        sort_nums=sorted(nums)
-        for i in range(len(nums)-1):
-                if sort_nums[i]==sort_nums[i+1]:
-                    return True
+
+        #Bruteforce O(nlogn)
+        # sort_nums=sorted(nums)
+        # for i in range(len(nums)-1):
+        #         if sort_nums[i]==sort_nums[i+1]:
+        #             return True
+        # return False
+
+        #optimal
+
+        n=len(nums)
+        hash_map={}
+        for i in range(n):
+            elem=nums[i]
+            if elem in hash_map:
+                return True
+            hash_map[nums[i]]=i
         return False
-        
         
 
 # Synced seamlessly with LeetHub Pro
