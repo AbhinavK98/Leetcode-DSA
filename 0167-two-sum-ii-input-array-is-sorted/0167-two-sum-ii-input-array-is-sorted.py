@@ -7,7 +7,7 @@ class Solution:
         #        if numbers[i]+numbers[j]==target:
         #             return [i+1,j+1]
         # return []
-        #Avg
+        #Avg---O(n)
         n=len(numbers)
         hash_map={}
         for i in range(n):
@@ -16,6 +16,10 @@ class Solution:
                 return [hash_map[rest]+1, i+1]
             hash_map[numbers[i]]=i
         return[]
+
+        #Optimal--- Here we will use two pointer approach
+
+
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
