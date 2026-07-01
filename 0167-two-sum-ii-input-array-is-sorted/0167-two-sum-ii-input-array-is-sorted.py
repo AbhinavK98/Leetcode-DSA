@@ -8,16 +8,28 @@ class Solution:
         #             return [i+1,j+1]
         # return []
         #Avg---O(n)
-        n=len(numbers)
-        hash_map={}
-        for i in range(n):
-            rest=target-numbers[i]
-            if rest in hash_map:
-                return [hash_map[rest]+1, i+1]
-            hash_map[numbers[i]]=i
-        return[]
+        # n=len(numbers)
+        # hash_map={}
+        # for i in range(n):
+        #     rest=target-numbers[i]
+        #     if rest in hash_map:
+        #         return [hash_map[rest]+1, i+1]
+        #     hash_map[numbers[i]]=i
+        # return[]
 
         #Optimal--- Here we will use two pointer approach
+        n=len(numbers)
+        left=0
+        right=n-1
+        while left<right:
+            current=numbers[left]+numbers[right]
+            if current==target:
+                return [left+1, right+1] 
+            if current<target:
+                left+=1
+            else:
+                right-=1
+        return[]
 
 
 
